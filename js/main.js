@@ -25,7 +25,24 @@ function gatRandomInt(start, end) {
     }
     
     if (start === end) return start;
-    start = Math.ceil(start);
-    end = Math.floor(end);
-    return Math.floor(Math.random() * (start - end + 1)) + end;
+    let result = start + Math.random() * (end + 1 - start);
+    return Math.floor(result);
+}
+
+function gatRandomFloat(start, end, simbolsAfterComma) {
+    let error = '';
+    let result;
+
+    if (!simbolsAfterComma) {
+        error = 'Укажите количество знаков после запятой!';
+    } else {
+        error = checkValues(start, end);
+    }
+    if (error.length > 0) {
+        console.error(error);
+        return;
+    }
+    result = start + Math.random() * (end - start);
+    if (start === end) result = start;
+    return result.toFixed(simbolsAfterComma);
 }
