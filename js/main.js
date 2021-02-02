@@ -17,10 +17,10 @@ function checkValues(a, b) {
   return error;
 }
 
-function gatRandomInt(start, end) {
+function getRandomInt(start, end) {
   const error = checkValues(start, end);
   if (error.length > 0) {
-    console.error(error);
+    alert(error);
     return;
   }
 
@@ -29,7 +29,7 @@ function gatRandomInt(start, end) {
   return Math.floor(result);
 }
 
-function gatRandomFloat(start, end, simbolsAfterComma) {
+function getRandomFloat(start, end, simbolsAfterComma) {
   let error = '';
   let result;
 
@@ -39,10 +39,13 @@ function gatRandomFloat(start, end, simbolsAfterComma) {
     error = checkValues(start, end);
   }
   if (error.length > 0) {
-    console.error(error);
+    alert(error);
     return;
   }
   result = start + Math.random() * (end - start);
   if (start === end) result = start;
   return result.toFixed(simbolsAfterComma);
 }
+
+getRandomInt(1, 10);
+getRandomFloat(1.1, 2.5, 3);
