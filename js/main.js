@@ -100,8 +100,9 @@ const createOffer = function () {
     location: {
       x: x,
       y: y,
-    }
+    },
   };
 };
 
 const authors = new Array(10).fill(null).map(() => createOffer());
+alert(authors);
