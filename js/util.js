@@ -22,8 +22,7 @@ function checkValues(a, b) {
 function getRandomInt(start, end) {
   const error = checkValues(start, end);
   if (error.length > 0) {
-    alert(error);
-    return;
+    throw new Error(error);
   }
 
   if (start === end) return start;
@@ -41,8 +40,7 @@ function getRandomFloat(start, end, simbolsAfterComma) {
     error = checkValues(start, end);
   }
   if (error.length > 0) {
-    alert(error);
-    return;
+    throw new Error(error);
   }
   result = start + Math.random() * (end - start);
   if (start === end) result = start;
