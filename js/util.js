@@ -1,4 +1,4 @@
-const MAX_NUMBER = Number.MAX_SAFE_INTEGER;
+const MAX_NUMBER = 100000; // Number.MAX_SAFE_INTEGER;
 
 function checkValues(a, b) {
   const errorText = {
