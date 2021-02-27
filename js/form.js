@@ -1,26 +1,32 @@
-const onChangeType = (value) => {
+const typeSelect = document.querySelector('#type');
+const priceInput = document.querySelector('#price');
+
+typeSelect.addEventListener('change', (evt) => {
+  const value = evt.target.value;
   let minPrice;
 
   switch (value) {
-    case 'Бунгало':
+    case 'bungalow':
       minPrice = 0;
       break;
-    case 'Квартира':
+    case 'flat':
       minPrice = 1000;
       break;
-    case 'Дом':
+    case 'house':
       minPrice = 5000;
       break;
-    case 'Дворец':
+    case 'palace':
       minPrice = 10000;
       break;
   }
 
-  document.querySelector('#price').placeholder = minPrice;
-}
+  priceInput.placeholder = minPrice;
+});
 
-const onChangeTimeIn = (time) => {
-  document.querySelector('#timeout').value = time;
-}
+const timeInSelect = document.querySelector('#timein');
+const timeOutSelect = document.querySelector('#timeout');
 
-export { onChangeType, onChangeTimeIn };
+timeInSelect.addEventListener('change', (evt) => {
+  const time = evt.target.value;
+  timeOutSelect.value = time;
+});
