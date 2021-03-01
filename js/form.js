@@ -2,23 +2,15 @@ const typeSelect = document.querySelector('#type');
 const priceInput = document.querySelector('#price');
 
 typeSelect.addEventListener('change', (evt) => {
-  const value = evt.target.value;
-  let minPrice;
+  const houseType = evt.target.value;
+  const housePriceMap = {
+    bungalow: 0,
+    flat: 1000,
+    house: 5000,
+    palace: 10000,
+  };
 
-  switch (value) {
-    case 'bungalow':
-      minPrice = 0;
-      break;
-    case 'flat':
-      minPrice = 1000;
-      break;
-    case 'house':
-      minPrice = 5000;
-      break;
-    case 'palace':
-      minPrice = 10000;
-      break;
-  }
+  const minPrice = housePriceMap[houseType];
 
   priceInput.placeholder = minPrice;
 });
