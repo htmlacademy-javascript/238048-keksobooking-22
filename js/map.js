@@ -3,22 +3,22 @@ import {setFormsEnabled} from './states.js';
 import {createOffers} from './data.js';
 import {createCustomPopup} from './popup.js';
 
-const startAdress = {
+const START_ADDRESS = {
   x: 35.681700,
   y: 139.753882,
 };
 
 const adressInput = document.querySelector('#address');
 adressInput.disabled = true;
-adressInput.value = `${startAdress.x}, ${startAdress.y}`;
+adressInput.value = `${START_ADDRESS.x}, ${START_ADDRESS.y}`;
 
 const map = L.map('map-canvas')
   .on('load', () => {
     setFormsEnabled();
   })
   .setView({
-    lat: startAdress.x,
-    lng: startAdress.y,
+    lat: START_ADDRESS.x,
+    lng: START_ADDRESS.y,
   }, 10);
 
 L.tileLayer(
@@ -34,8 +34,8 @@ const mainPinIcon = L.icon({
 });
 
 const mainMarker = L.marker({
-  lat: startAdress.x,
-  lng: startAdress.y,
+  lat: START_ADDRESS.x,
+  lng: START_ADDRESS.y,
 }, {
   draggable: true,
   icon: mainPinIcon,
