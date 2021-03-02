@@ -1,13 +1,8 @@
-import { createOffers } from './data.js';
 import { transformHouseType } from './util.js';
 
-const similarListElement = document.querySelector('#map-canvas');
-const similarOfferTemplate = document.querySelector('#card').content;
-const similarListFragment = document.createDocumentFragment();
-
-const similarOffers = createOffers();
-
-const configureOfferElement = ({offer, avatar}) => {
+const createCustomPopup = (data) => {
+  const { avatar, offer } = data;
+  const similarOfferTemplate = document.querySelector('#card').content.querySelector('.popup');
   const offerElement = similarOfferTemplate.cloneNode(true);
 
   offerElement.querySelector('.popup__title').textContent = offer.title;
@@ -29,8 +24,6 @@ const configureOfferElement = ({offer, avatar}) => {
   });
 
   return offerElement;
-};
+}
 
-similarListFragment.appendChild(configureOfferElement(similarOffers[0]));
-
-similarListElement.appendChild(similarListFragment);
+export { createCustomPopup };

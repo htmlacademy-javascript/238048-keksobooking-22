@@ -1,3 +1,2 @@
-import './util.js';
-import './data.js';
-import './similar-list.js';
+import './states.js';
+import './map.js';
