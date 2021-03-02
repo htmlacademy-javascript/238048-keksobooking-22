@@ -1,4 +1,4 @@
-const MAX_NUMBER = Number.MAX_SAFE_INTEGER;
+const MAX_NUMBER = 100000; // Number.MAX_SAFE_INTEGER;
 
 function checkValues(a, b) {
   const errorText = {
@@ -68,4 +68,15 @@ const createRandomArray = (elements, isUnique) => {
   return result;
 };
 
-export { MAX_NUMBER, getRandomFloat, getRandomInt, getRandomArrayElement, createRandomArray };
+const transformHouseType = (houseType) => {
+  const houseTypeMap = {
+    flat: 'Квартира',
+    bungalow: 'Бунгало',
+    house: 'Дом',
+    palace: 'Дворец',
+  };
+
+  return houseTypeMap[houseType];
+}
+
+export { MAX_NUMBER, getRandomFloat, getRandomInt, getRandomArrayElement, createRandomArray, transformHouseType };
