@@ -68,23 +68,15 @@ const createRandomArray = (elements, isUnique) => {
   return result;
 };
 
-const transformHouseType = (type) => {
-  let result = '';
-  switch (type) {
-    case 'flat':
-      result = 'Квартира';
-      break;
-    case 'bungalow':
-      result = 'Бунгало';
-      break;
-    case 'house':
-      result = 'Дом';
-      break;
-    case 'palace':
-      result = 'Дворец';
-      break;
-  }
-  return result;
+const transformHouseType = (houseType) => {
+  const houseTypeMap = {
+    flat: 'Квартира',
+    bungalow: 'Бунгало',
+    house: 'Дом',
+    palace: 'Дворец',
+  };
+
+  return houseTypeMap[houseType];
 }
 
 export { MAX_NUMBER, getRandomFloat, getRandomInt, getRandomArrayElement, createRandomArray, transformHouseType };
