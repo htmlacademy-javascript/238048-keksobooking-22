@@ -31,6 +31,6 @@ const createOffer = function () {
   };
 };
 
-const authors = new Array(10).fill(null).map(() => createOffer());
+const createOffers = () => new Array(10).fill(null).map(() => createOffer());
 
-export { authors };
+export { createOffers };
